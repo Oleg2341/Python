@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Публікації{% endblock %}
+
+{% block content %}
+    <h2>Список публікацій</h2>
+
+    {% if posts %}
+        {% for post in posts %}
+            <h3>{{ post.name }}</h3>
+            <p>{{ post.description }}</p>
+        {% else %}
+            <p>Публікацій поки немає.</p>
+        {% endfor %}
+    {% else %}
+        <p>Публікацій поки немає.</p>
+    {% endif %}
+{% endblock %}

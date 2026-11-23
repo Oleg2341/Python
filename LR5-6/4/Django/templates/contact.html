@@ -1,0 +1,33 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Контактна форма{% endblock %}
+
+{% block content %}
+
+<h2>Зв'язатися з нами</h2>
+
+<form method="POST">
+    {% csrf_token %}
+
+    {% for field in form %}
+        <div>
+            <p>{{ field.label_tag }}</p>
+            {{ field }}
+
+            {% if field.errors %}
+                {% for error in field.errors %}
+                    <p style="color: red;">{{ error }}</p>
+                {% endfor %}
+            {% endif %}
+        </div>
+    {% endfor %}
+
+    {% if form.non_field_errors %}
+        {{ form.non_field_errors }}
+    {% endif %}
+
+    <button type="submit">Надіслати</button>
+</form>
+
+{% endblock %}

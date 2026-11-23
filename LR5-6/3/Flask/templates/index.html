@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Головна сторінка{% endblock %}
+
+{% block content %}
+    <h2>Вітаємо у нашому блозі!</h2>
+    <p>Тут ви знайдете цікаві статті та новини.</p>
+
+    <h3>Категорії:</h3>
+
+    {% for category in categories %}
+        <p>{{ category }}</p>
+    {% else %}
+        <p>Категорій поки немає.</p>
+    {% endfor %}
+{% endblock %}

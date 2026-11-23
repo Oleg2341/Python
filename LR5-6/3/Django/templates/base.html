@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Мій блог{% endblock %}</title>
+</head>
+<body>
+
+    <header>
+        <h1>Мій блог</h1>
+        <nav>
+            <a href="{% url 'home' %}">Головна</a>
+            <a href="{% url 'posts' %}">Публікації</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>© {{ year }} Мій блог</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Публікації</title>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <p>Кількість публікацій: {{ count }}</p>
+
+    {% if posts %}
+        {% for post in posts %}
+            <h2>{{ post.name }}</h2>
+            <p>{{ post.description|truncatewords:5 }}</p>
+        {% endfor %}
+    {% else %}
+        <p>Публікацій поки немає</p>
+    {% endif %}
+
+    <a href="/">На головну</a>
+</body>
+</html>

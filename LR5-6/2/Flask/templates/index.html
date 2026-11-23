@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Головна</title>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <p>Рік створення: {{ year }}</p>
+
+    <h2>Категорії блогу:</h2>
+
+    {% if categories %}
+        <ul>
+        {% for category in categories %}
+            <li>{{ category }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Категорій поки немає</p>
+    {% endif %}
+
+    <p>Кількість категорій: {{ categories|length }}</p>
+    <p>{{ title|default('Без назви') }}</p>
+
+    <p>Назва у верхньому регістрі: {{ title.upper() }}</p>
+
+    <a href="/posts/">Переглянути публікації</a>
+</body>
+</html>
